@@ -69,6 +69,21 @@ docker images
 
 You should see the image in the output similar to:
 
+```
+REPOSITORY                                TAG       IMAGE ID       CREATED          SIZE
+webapp                                    0.0.1     8537df62b725   20 seconds ago   843MB
+k8s.gcr.io/kube-apiserver                 v1.23.3   f40be0088a83   2 months ago     135MB
+k8s.gcr.io/kube-controller-manager        v1.23.3   b07520cd7ab7   2 months ago     125MB
+k8s.gcr.io/kube-proxy                     v1.23.3   9b7cc9982109   2 months ago     112MB
+k8s.gcr.io/kube-scheduler                 v1.23.3   99a3486be4f2   2 months ago     53.5MB
+k8s.gcr.io/etcd                           3.5.1-0   25f8c7f3da61   5 months ago     293MB
+k8s.gcr.io/coredns/coredns                v1.8.6    a4ca41631cc7   6 months ago     46.8MB
+k8s.gcr.io/pause                          3.6       6270bb605e12   7 months ago     683kB
+ruby                                      2.5       27d049ce98db   9 months ago     843MB
+kubernetesui/dashboard                    v2.3.1    e1482a24335a   10 months ago    220MB
+kubernetesui/metrics-scraper              v1.0.7    7801cfc6d5c0   10 months ago    34.4MB
+gcr.io/k8s-minikube/storage-provisioner   v5        6e38f40d628d   12 months ago    31.5MB
+```
 
 ### Create the deployment
 In order to create the deployment of the application in the Kubernetes cluster you need to run the following command from the terminal:
