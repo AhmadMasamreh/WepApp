@@ -30,8 +30,11 @@ From the terminal run:
 kubectl cluster-info
 ```
 
-You should get an output similar to
-
+You should get an output similar to :
+```
+Kubernetes control plane is running at https://192.168.49.2:8443
+CoreDNS is running at https://192.168.49.2:8443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+```
 
 From the terminal run:
 
@@ -41,8 +44,9 @@ kubectl get nodes
 
 You should get an output similar to:
 
-
-
+```
+minikube   Ready    control-plane,master   2m25s   v1.23.3
+```
 
 ### Create the container image
 The first step to deploy the application is to create the container image that we will use to run the application in the cluster.
