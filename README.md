@@ -1,7 +1,7 @@
 # Ruby Web Application in Kubernetes
 
 ## Overview
-This repository contains a sample application written in Ruby.
+This repository contains a simple Web application written in Ruby.
 
 ## Prerequisites:
 - Docker to be installed.
