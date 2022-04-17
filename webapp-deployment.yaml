@@ -17,5 +17,16 @@ spec:
       containers:
       - name: webapp
         image: webapp:0.0.1
+        args:
+        - /bin/sh
+        - -c
+        - touch /tmp/healthy; sleep 30; rm -rf /tmp/healthy; sleep 600
         ports:
         - containerPort: 80
+        livenessProbe:
+          exec:
+            command:
+            - cat
+            - /tmp/healthy
+          initialDelaySeconds: 5
+          periodSeconds: 5
