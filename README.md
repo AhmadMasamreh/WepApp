@@ -93,29 +93,50 @@ kubectl create -f webapp-deployment.yaml
 ```
 
 This command should return with an output similar to:
-
+```
+deployment.apps/webapp created
+```
 
 Then verify that the deployment was created by running:
 
+```
+kubectl get deployment
+```
 
 You should get an output similar to:
 
-
+```
+NAME     READY   UP-TO-DATE   AVAILABLE   AGE
+webapp   2/2     2            2           83s
+```
 
 ### Create the service
 
 In order to create the service to load balance the application in the Kubernetes cluster you need to run the following command from the terminal:
 
+```
+kubectl create -f webapp-deployment.yaml
+```
 
 This command should return with an output similar to:
 
+```
+service/webapp created
+```
+
+
 Then verify that the service was created by running:
 
-
+```
+kubectl get service
+```
 
 You should get an output similar to:
-
-
+```
+NAME         TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
+kubernetes   ClusterIP      10.96.0.1       <none>        443/TCP        12m
+webapp       LoadBalancer   10.97.177.159   <pending>     80:31000/TCP   67s
+```
 
 The `CLUSTER-IP` in your case might be different but the ports should indicate the port that the cluster is using to access the application (80) and the port that the cluster node exposes to the world to access the application (31000)
 
@@ -123,13 +144,24 @@ The `CLUSTER-IP` in your case might be different but the ports should indicate t
 
 Run the `kubectl cluster-info` command again to get the IP of the cluster node:
 
+```
+Kubernetes control plane is running at https://192.168.49.2:8443
+CoreDNS is running at https://192.168.49.2:8443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+```
 
 From a browser use that IP and port 31000 to access the application. From the terminal we can use the `curl` command:
+
+```
+curl http://192.168.49.2:31000
+```
 
 
 You should get an output similar to the following:
 
-
+```
+Hello! Pod IP is 172.17.0.4
+Hello! Pod IP is 172.17.0.3
+```
 
 Run the command multiple times and you will see that the IP changes to reflect that the requests are load balanced between the pods.
 
