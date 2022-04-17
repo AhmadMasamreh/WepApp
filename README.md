@@ -12,6 +12,7 @@ This repository contains a sample application written in Ruby.
 
 ## Application Deployment:
 
+### Clone from git repository
 ```
 $ git  clone https://github.com/AhmadMasamreh/WebApp.git
 ```
